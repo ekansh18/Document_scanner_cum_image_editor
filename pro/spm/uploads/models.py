@@ -16,7 +16,7 @@ ACTION_CHOICES=(
 )
 class Upload(models.Model):
     description= models.CharField(max_length=255, blank=True)
-    image= models.ImageField(upload_to='images')
+    image= models.ImageField(upload_to='images/')
     action=models.CharField(max_length=50, choices=ACTION_CHOICES)
     updated=models.DateTimeField(auto_now=True)
     created=models.DateTimeField(auto_now_add=True)

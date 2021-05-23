@@ -22,9 +22,12 @@ from uploads import views
 urlpatterns = [
     path('', views.home_view, name="home"),
     path('admin/', admin.site.urls),
+    # path('edit/', views.editing_view, name="edit"),
     path('edit/', views.editing_view, name="edit"),
+    path('success', views.success, name = 'success'),
 ]
 
-urlpatterns+=static(
-    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+if settings.DEBUG:
+    urlpatterns+=static(
+     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )

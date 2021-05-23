@@ -1,8 +1,8 @@
 from django import forms
-from .models import *
+from .models import Upload
+
   
-class Form(forms.ModelForm):
-  
+class UpForm(forms.ModelForm):
     class Meta:
         model= Upload
-        fields = ['description', 'image',]
+        fields = ['image', 'action']
