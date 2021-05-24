@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('edit/', views.editing_view, name="edit"),
     path('edit/', views.editing_view, name="edit"),
-    path('success', views.success, name = 'success'),
+    path('edit/success', views.success, name = 'success'),
 ]
 
 if settings.DEBUG:

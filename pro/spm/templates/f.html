@@ -6,10 +6,9 @@
 </head>
 <body>
     <p> Bhai please hojaa</p>
-    <form method = "post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit">Upload Kardo</input>
-    </form>
+    {% if img_obj %}
+  <h3>Succesfully uploaded : {{img_obj.description}}</h3>
+  <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+{% endif %}
 </body>
 </html>
