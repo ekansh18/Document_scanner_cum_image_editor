@@ -6,3 +6,5 @@ class UpForm(forms.ModelForm):
     class Meta:
         model= Upload
         fields = ['image', 'action']
+        
+   

@@ -6,6 +6,7 @@ import numpy as np
 from django.core.files.base import ContentFile
 # Create your models here.
 
+
 ACTION_CHOICES=(
     ('NO_FILTER','no filter'),
     ('COLORIZED',' colorized'),

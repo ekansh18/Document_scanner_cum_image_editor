@@ -27,4 +27,14 @@ def editing_view(request):
     return render(request, 'editing.html', {'form':form})
 
 def came(request):
+    
+#     form=CamForm()
+    
+#     if request.method=='POST':
+#         form=CamForm(request.POST,request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             img_obj=form.instance
+#             # return HttpResponseRedirect('success')
+#             return render(request, 'imgshow.html', {'img_obj':img_obj})
     return render(request, "cam.html",{})

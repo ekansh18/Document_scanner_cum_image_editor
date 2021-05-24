@@ -25,6 +25,7 @@ urlpatterns = [
     path('edit/', views.editing_view, name="edit"),
     path('edit/success', views.success, name = 'success'),
     path('cam/', views.came, name="cam"),
+    
 ]
 
 if settings.DEBUG:
