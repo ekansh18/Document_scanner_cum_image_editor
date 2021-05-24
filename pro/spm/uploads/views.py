@@ -11,7 +11,7 @@ def home_view(request,*args, **kwargs):
 
 
 def success(request):
-     return render(request, 'f.html', {'img_obj':img_obj})
+     return render(request, 'imgshow.html', {'img_obj':img_obj})
     # return HttpResponse("success")
 
 def editing_view(request):
@@ -23,5 +23,8 @@ def editing_view(request):
             form.save()
             img_obj=form.instance
             # return HttpResponseRedirect('success')
-            return render(request, 'f.html', {'img_obj':img_obj})
+            return render(request, 'imgshow.html', {'img_obj':img_obj})
     return render(request, 'editing.html', {'form':form})
+
+def came(request):
+    return render(request, "cam.html",{})

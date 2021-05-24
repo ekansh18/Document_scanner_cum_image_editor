@@ -22,9 +22,9 @@ from uploads import views
 urlpatterns = [
     path('', views.home_view, name="home"),
     path('admin/', admin.site.urls),
-    # path('edit/', views.editing_view, name="edit"),
     path('edit/', views.editing_view, name="edit"),
     path('edit/success', views.success, name = 'success'),
+    path('cam/', views.came, name="cam"),
 ]
 
 if settings.DEBUG:
