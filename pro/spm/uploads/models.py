@@ -1,6 +1,7 @@
 from io import BytesIO
 from django.db import models
 from .utils import get_filtered_image
+from .docsc import sc
 from PIL import Image
 import numpy as np
 from django.core.files.base import ContentFile
@@ -15,13 +16,16 @@ ACTION_CHOICES=(
     ('BINARY','binary'),
     ('INVERT','invert')
 )
+SC_CHOICES=[
+    ('YES','yes')
+]
 class Upload(models.Model):
     description= models.CharField(max_length=255, blank=True)
     image= models.ImageField(upload_to='images/')
     action=models.CharField(max_length=50, choices=ACTION_CHOICES)
     updated=models.DateTimeField(auto_now=True)
     created=models.DateTimeField(auto_now_add=True)
-    
+    sca=models.CharField(max_length=50, choices=SC_CHOICES, default='YES')
     
     def __str__(self):
         return str(self.id)
@@ -33,7 +37,10 @@ class Upload(models.Model):
         
         #convert to array and process 
         cv_img=np.array(pil_img)
-        img=get_filtered_image(cv_img, self.action)        
+        if self.sca=='YES':
+            img=sc(cv_img)
+        else:    
+            img=get_filtered_image(cv_img, self.action)        
         
         #convert back to pil image
         im_pil=Image.fromarray(img)

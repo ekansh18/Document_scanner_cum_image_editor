@@ -11,4 +11,9 @@ class UpForm(forms.ModelForm):
 class UpImage(forms.ModelForm):
     class Meta:
         model=Upload
-        fields=['image', 'action']           
+        fields=['image', 'action']     
+
+class Scup(forms.ModelForm):
+    class Meta:
+        model=Upload
+        fields=['image','sca']              
