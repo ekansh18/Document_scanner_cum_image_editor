@@ -39,7 +39,7 @@
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="{% url 'home' %}">Image Display Page</a></h1>
+      <h1 class="logo me-auto"><a href="{% url 'home' %}">Document Display Page</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -74,7 +74,8 @@
         <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
       {% endif %}
       <p> Right click on the image and click 'save Image As' to download the image</p>
-      
+      <!-- <a href="/Users/ekansh/Desktop/ain/testing.pdf" download>download</a> -->
+      <a href="cam.html" download>Download</a>
       </div>
     </section>
 
