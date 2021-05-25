@@ -56,9 +56,9 @@
 
         <ol>
           <li><a href="{% url 'home' %}">Home</a></li>
-          <li>Edited Image Display Page</li>
+          <li>Edited Document Display Page</li>
         </ol>
-        <h2>Edited Image</h2>
+        <h2>Edited Document</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -66,11 +66,11 @@
     <section class="inner-page">
       <div class="container">
         <p>
-          IMAGE IS SHOWN BELOW
+          Document is shown below:
         </p>
         
         {% if img_obj %}
-        <h3>EDITED IMAGE: {{img_obj.description}}</h3>
+        <h3>EDITED DOC: {{img_obj.description}}</h3>
         <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
       {% endif %}
       <p> Right click on the image and click 'save Image As' to download the image</p>

@@ -49,3 +49,15 @@ def scan(request):
             # return HttpResponse('success')
             return render(request, 'docshow.html', {'img_obj':img_obj})
        return render(request, 'scann.html',{'form':form})  
+
+def camsc(request):
+       form=Scup()
+    
+       if request.method=='POST':
+         form=Scup(request.POST,request.FILES)
+         if form.is_valid():
+            form.save()
+            img_obj=form.instance
+            # return HttpResponse('success')
+            return render(request, 'docshow.html', {'img_obj':img_obj})
+       return render(request, "cam.html",{'form':form})

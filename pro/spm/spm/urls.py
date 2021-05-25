@@ -26,6 +26,7 @@ urlpatterns = [
     path('edit/success', views.success, name = 'success'),
     path('cam/', views.came, name="cam"),
     path('scan/', views.scan, name="scan"),
+    path('camsc/', views.camsc, name="camsc"),
     
 ]
 
