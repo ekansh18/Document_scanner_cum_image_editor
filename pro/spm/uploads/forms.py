@@ -7,4 +7,8 @@ class UpForm(forms.ModelForm):
         model= Upload
         fields = ['image', 'action']
         
-   
+           
+class UpImage(forms.ModelForm):
+    class Meta:
+        model=Upload
+        fields=['image', 'action']           

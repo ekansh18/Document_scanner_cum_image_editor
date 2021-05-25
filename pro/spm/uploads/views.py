@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 
 # Create your views here.
 from django.http import HttpResponse, request, HttpResponseRedirect
-from .forms import UpForm
+from .forms import UpForm, UpImage
 from .models import Upload
 
 def home_view(request,*args, **kwargs):
@@ -27,14 +27,13 @@ def editing_view(request):
     return render(request, 'editing.html', {'form':form})
 
 def came(request):
+       form=UpImage()
     
-#     form=CamForm()
-    
-#     if request.method=='POST':
-#         form=CamForm(request.POST,request.FILES)
-#         if form.is_valid():
-#             form.save()
-#             img_obj=form.instance
-#             # return HttpResponseRedirect('success')
-#             return render(request, 'imgshow.html', {'img_obj':img_obj})
-    return render(request, "cam.html",{})
+       if request.method=='POST':
+         form=UpImage(request.POST,request.FILES)
+         if form.is_valid():
+            form.save()
+            img_obj=form.instance
+            # return HttpResponse('success')
+            return render(request, 'imgshow.html', {'img_obj':img_obj})
+       return render(request, "cam.html",{'form':form})
