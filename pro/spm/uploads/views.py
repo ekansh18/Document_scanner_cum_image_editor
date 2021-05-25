@@ -37,3 +37,6 @@ def came(request):
             # return HttpResponse('success')
             return render(request, 'imgshow.html', {'img_obj':img_obj})
        return render(request, "cam.html",{'form':form})
+   
+def scan(request):
+     return render(request, 'scann.html',{})  
